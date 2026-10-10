@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mountain Ridge Construction TI Quick Budget</title>
+<meta name="description" content="Quick tenant improvement budgets for Mountain Ridge Construction.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mountain Ridge Construction · TI Quick Budget">
+<meta property="og:description" content="Tenant improvement budgets in minutes, with a client-ready summary. Add it to your home screen.">
+<meta property="og:image" content="https://falkbuiltlance.github.io/ti-budget/mountain-ridge/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://falkbuiltlance.github.io/ti-budget/mountain-ridge/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ECEFF1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mtn Ridge TI">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+@font-face{font-family:"Barlow";font-weight:400;font-display:swap;src:url(../lib/fonts/barlow-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:500;font-display:swap;src:url(../lib/fonts/barlow-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow";font-weight:600;font-display:swap;src:url(../lib/fonts/barlow-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Semi Condensed";font-weight:500;font-display:swap;src:url(../lib/fonts/barlow-semi-condensed-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Semi Condensed";font-weight:600;font-display:swap;src:url(../lib/fonts/barlow-semi-condensed-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Barlow Semi Condensed";font-weight:700;font-display:swap;src:url(../lib/fonts/barlow-semi-condensed-latin-700-normal.woff2) format("woff2")}
+
+/* Layout: single narrow column (phone-first, max 640px); builder cards stacked with a sticky total; summary is a fixed-light "paper" sheet sized for one screenshot or one PDF page */
+:root{
+  --bg:#ECEFF1; --surface:#FFFFFF; --surface-2:#F4F6F8; --ink:#16202A; --muted:#5A6772;
+  --line:#D3DADF; --accent:#3E5C4A; --accent-ink:#FFFFFF; --accent-soft:#E4E8E6; --danger:#A3392A;
+  --logo-plate:transparent;
+  /* summary sheet stays light in every theme so screenshots and PDFs always look the same */
+  --sheet-bg:#FFFFFF; --sheet-ink:#131A21; --sheet-muted:#5D6973; --sheet-faint:#8A949C; --sheet-line:#DEE4E8;
+  --sheet-band:#F1F4F6; --sheet-accent:#3E5C4A;
+  --f-display:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r:10px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0E1419; --surface:#162029; --surface-2:#1C2731; --ink:#E5EBEF; --muted:#98A6B1;
+  --line:#2A3743; --accent:#97B9A5; --accent-ink:#0B141A; --accent-soft:#324244; --danger:#E58371;
+  --logo-plate:#F2F4F5;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0E1419; --surface:#162029; --surface-2:#1C2731; --ink:#E5EBEF; --muted:#98A6B1;
+  --line:#2A3743; --accent:#97B9A5; --accent-ink:#0B141A; --accent-soft:#324244; --danger:#E58371;
+  --logo-plate:#F2F4F5;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.45;
+  padding-inline:max(16px, env(safe-area-inset-left, 0px));
+  padding-block:env(safe-area-inset-top, 0px) calc(40px + env(safe-area-inset-bottom, 0px))}
+.app{max-width:640px;margin:0 auto}
+button,input{font:inherit;color:inherit}
+input{font-size:16px}
+img{max-width:100%}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.num{font-variant-numeric:tabular-nums}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:16px 12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.brand-logo{display:flex;align-items:center;background:var(--logo-plate);border-radius:6px;padding:3px 6px;flex:none}
+.brand-logo img{height:26px;width:auto;display:block}
+.brand-text{display:flex;flex-direction:column;line-height:1.1;min-width:0}
+.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.app-name{font-family:var(--f-display);font-weight:700;font-size:22px;letter-spacing:.01em}
+.tabs{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px}
+.tab{border:0;background:transparent;padding:7px 16px;border-radius:999px;font-weight:600;font-size:14px;color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+
+/* cards */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:grid;gap:10px;margin-bottom:14px}
+.grid2{display:grid;grid-template-columns:1fr;gap:10px}
+@media (min-width:520px){ .grid2{grid-template-columns:1fr 1fr} }
+.lbl{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.txt{width:100%;border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:10px 12px;min-width:0}
+.txt:focus{border-color:var(--accent);background:var(--surface)}
+.big{font-family:var(--f-display);font-size:20px;font-weight:600}
+.stamp{font-size:14px;color:var(--muted)}
+.field{display:grid;gap:4px;min-width:0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;width:max-content}
+.seg button{border:0;background:var(--surface-2);padding:8px 16px;font-weight:600;cursor:pointer;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+details.card{display:block}
+details.card > summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px}
+details.card > summary::-webkit-details-marker{display:none}
+details.card > summary::after{content:"Edit";font-size:13px;color:var(--accent);font-weight:600}
+details.card[open] > summary::after{content:"Done"}
+details.card[open] > summary{margin-bottom:10px}
+.who{font-size:14px;color:var(--muted)}
+.note{font-size:12px;color:var(--muted)}
+
+/* lines */
+#lines{display:grid;gap:12px}
+.line{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:grid;gap:12px}
+.line.cost{background:var(--surface-2);border-style:dashed}
+.line-head{display:flex;align-items:center;gap:10px}
+.tag{flex:none;font-family:var(--f-display);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:4px 8px;border-radius:6px}
+.line-head .txt{flex:1;font-weight:600}
+.x{flex:none;width:36px;height:36px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;font-size:20px;line-height:1}
+.x:hover{color:var(--danger);border-color:var(--danger)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.affix{position:relative}
+.affix .txt{font-size:18px;font-weight:600;text-align:right}
+.affix .pre,.affix .suf{position:absolute;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px;pointer-events:none}
+.affix .pre{left:12px}.affix .suf{right:12px}
+.affix.has-pre .txt{padding-left:30px}
+.affix.has-suf .txt{padding-right:40px}
+
+/* slider */
+.slider{--thumb:28px;position:relative;padding-bottom:22px}
+.slider input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:var(--thumb);background:transparent;margin:0;cursor:pointer;display:block}
+.slider input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:99px;background:linear-gradient(to right,var(--accent) 0 var(--pct,0%),var(--line) var(--pct,0%) 100%)}
+.slider input[type=range]::-moz-range-track{height:8px;border-radius:99px;background:linear-gradient(to right,var(--accent) 0 var(--pct,0%),var(--line) var(--pct,0%) 100%)}
+.slider input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:var(--thumb);height:var(--thumb);border-radius:50%;background:var(--surface);border:3px solid var(--accent);margin-top:calc((8px - var(--thumb))/2);box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.slider input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--surface);border:3px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.slider.custom input[type=range]::-webkit-slider-thumb{border-style:dashed}
+.ticks{position:absolute;left:0;right:0;bottom:0;height:20px;pointer-events:none}
+.tick{position:absolute;top:0;transform:translateX(-50%);font-size:11px;color:var(--muted);display:flex;flex-direction:column;align-items:center;line-height:1}
+.tick::before{content:"";width:1px;height:5px;background:var(--line);margin-bottom:3px}
+.tick.minor{font-size:0}
+.tick.on{color:var(--accent);font-weight:600}
+.custom-note{font-size:12px;color:var(--muted);text-align:right;min-height:16px;margin-top:-6px}
+
+.line-total{display:flex;justify-content:space-between;align-items:baseline;gap:8px;border-top:1px solid var(--line);padding-top:10px;flex-wrap:wrap}
+.calc{font-size:13px;color:var(--muted)}
+.amt{font-family:var(--f-display);font-size:22px;font-weight:700}
+.empty{border:1px dashed var(--line);border-radius:var(--r);padding:20px;text-align:center;color:var(--muted)}
+
+/* buttons */
+.adders{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-block:14px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:var(--r);padding:12px 10px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;color:var(--ink)}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08);color:var(--accent-ink)}
+.btn.ghost{background:transparent}
+.btn.warn{color:var(--danger);border-color:var(--danger)}
+.btn[disabled]{opacity:.6;cursor:progress}
+.plus{font-size:20px;line-height:1;font-weight:500}
+
+/* adjustments */
+.adj{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.adj .affix .txt{font-size:17px}
+.adj-out{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* total */
+.total{position:sticky;bottom:calc(env(safe-area-inset-bottom,0px) + 8px);background:var(--ink);color:var(--bg);border-radius:var(--r);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;box-shadow:0 6px 20px rgba(0,0,0,.18);z-index:2}
+.total .k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.75;font-weight:600}
+.total .sub{font-size:13px;opacity:.8}
+.total .v{font-family:var(--f-display);font-size:30px;font-weight:700;line-height:1}
+.actions{display:grid;grid-template-columns:2fr 1fr;gap:10px;margin-top:14px}
+.foot{margin-top:22px;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:13px;color:var(--muted);text-align:center}
+.foot a{color:var(--accent);font-weight:600}
+.linkbtn{border:0;background:none;color:var(--accent);font-weight:600;cursor:pointer;padding:4px;font-size:13px}
+
+/* ---------- summary sheet (fixed light) ---------- */
+.sheet{background:var(--sheet-bg);color:var(--sheet-ink);border-radius:12px;padding:20px 18px 16px;border:1px solid var(--sheet-line);box-shadow:0 2px 14px rgba(0,0,0,.08);color-scheme:light;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.s-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;border-bottom:2px solid var(--sheet-ink);padding-bottom:10px;flex-wrap:wrap}
+.s-brand{display:flex;flex-direction:column;gap:5px;min-width:0}
+.s-brand img{height:44px;width:auto;max-width:220px;object-fit:contain;object-position:left center;display:block}
+.s-word{font-family:var(--f-display);font-weight:700;font-size:22px;letter-spacing:.04em;line-height:1.05;color:var(--sheet-accent)}
+.s-sub{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--sheet-muted);font-weight:600;line-height:1.25}
+.doc{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sheet-muted);font-weight:600;text-align:right;line-height:1.3;margin-left:auto}
+.proj{font-family:var(--f-display);font-weight:700;font-size:28px;line-height:1.1;margin:14px 0 0;text-wrap:balance;overflow-wrap:anywhere}
+.addr{font-size:14px;color:var(--sheet-muted);margin-top:2px;overflow-wrap:anywhere}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin-top:12px;font-size:13px}
+.meta dt{color:var(--sheet-muted);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding-top:2px}
+.meta dd{margin:0;overflow-wrap:anywhere}
+.meta .dim{color:var(--sheet-muted)}
+.hero{margin-top:14px;background:var(--sheet-band);border-radius:10px;padding:16px}
+.hero-k{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sheet-muted);font-weight:600}
+.hero-v{font-family:var(--f-display);font-weight:700;font-size:44px;line-height:1.05;color:var(--sheet-accent);overflow-wrap:anywhere}
+.range{font-size:13px;color:var(--sheet-faint);margin-top:2px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;border-top:1px solid var(--sheet-line);padding-top:12px}
+.stats b{display:block;font-family:var(--f-display);font-size:19px;font-weight:700}
+.stats span{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--sheet-muted)}
+.mix{display:flex;height:12px;border-radius:99px;overflow:hidden;margin:16px 0 4px;background:var(--sheet-line);gap:2px}
+.mix i{display:block;height:100%}
+.tbl-wrap{overflow-x:auto;margin-top:12px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--sheet-muted);font-weight:600;text-align:right;padding:6px 4px;border-bottom:1px solid var(--sheet-line)}
+th:first-child,td:first-child{text-align:left}
+td{padding:9px 4px;border-bottom:1px solid var(--sheet-line);text-align:right;white-space:nowrap;vertical-align:top}
+td:first-child{white-space:normal;overflow-wrap:anywhere}
+.dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px;vertical-align:0}
+tr.sec td{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--sheet-muted);font-weight:600;padding-top:16px}
+tr.sub td{font-weight:600;background:var(--sheet-band)}
+tr.grand td{font-family:var(--f-display);font-weight:700;font-size:18px;border-top:2px solid var(--sheet-ink);border-bottom:0;padding-top:10px}
+.fine{font-size:12px;color:var(--sheet-muted);margin:14px 0 0;line-height:1.4}
+.s-actions{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:8px;margin-top:14px}
+.s-actions .btn{padding:12px 6px;font-size:15px}
+.hint{font-size:13px;color:var(--muted);text-align:center;margin-top:10px}
+.toast{font-size:13px;color:var(--accent);text-align:center;min-height:18px;margin-top:6px}
+
+/* clean screenshot mode: only the sheet remains */
+body.clean .top, body.clean .s-actions, body.clean .hint, body.clean .toast, body.clean #copyFallback{display:none!important}
+body.clean .sheet{box-shadow:none;margin-top:12px}
+
+@media (min-width:560px){
+  .hero-v{font-size:52px}
+  .sheet{padding:28px 28px 22px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .line{animation:in .18s ease-out}
+  @keyframes in{from{transform:translateY(4px);opacity:.6}to{transform:none;opacity:1}}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand">
+      
+      <div class="brand-text">
+        <span class="eyebrow">Mountain Ridge Construction</span>
+        <span class="app-name">TI Quick Budget</span>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="View">
+      <button class="tab" id="tab-build" role="tab" aria-selected="true" aria-controls="view-build">Budget</button>
+      <button class="tab" id="tab-summary" role="tab" aria-selected="false" aria-controls="view-summary">Summary</button>
+    </nav>
+  </header>
+
+  <section id="view-build" role="tabpanel" aria-labelledby="tab-build">
+    <div class="card">
+      <div class="field">
+        <label class="lbl" for="projectName">Project name</label>
+        <input class="txt big" id="projectName" type="text" placeholder="Enter project name" autocomplete="off">
+      </div>
+      <div class="field">
+        <label class="lbl" for="projectAddress">Project address</label>
+        <input class="txt" id="projectAddress" type="text" placeholder="Street, city, state" autocomplete="off">
+      </div>
+      <div class="grid2">
+        <div class="field">
+          <label class="lbl" for="clientName">Prepared for</label>
+          <input class="txt" id="clientName" type="text" placeholder="Client name" autocomplete="off">
+        </div>
+        <div class="field">
+          <label class="lbl" for="clientCompany">Client company</label>
+          <input class="txt" id="clientCompany" type="text" placeholder="Company" autocomplete="off">
+        </div>
+      </div>
+      <div class="field" id="currencyField" hidden>
+        <span class="lbl">Currency</span>
+        <div class="seg" role="group" aria-label="Currency">
+          <button type="button" id="curUSD" aria-pressed="false">USD</button>
+          <button type="button" id="curCAD" aria-pressed="false">CAD</button>
+        </div>
+      </div>
+      <div class="stamp num" id="nowBuild"></div>
+    </div>
+
+    <details class="card" id="byCard">
+      <summary><span><span class="lbl">Prepared by</span><br><span class="who" id="whoLine">Add your name and contact info</span></span></summary>
+      <div class="grid2">
+        <div class="field"><label class="lbl" for="byName">Your name</label><input class="txt" id="byName" type="text" autocomplete="name"></div>
+        <div class="field"><label class="lbl" for="byTitle">Title</label><input class="txt" id="byTitle" type="text" autocomplete="organization-title"></div>
+        <div class="field"><label class="lbl" for="byPhone">Phone</label><input class="txt" id="byPhone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label class="lbl" for="byEmail">Email</label><input class="txt" id="byEmail" type="email" autocomplete="email"></div>
+      </div>
+      <p class="note">Saved on this device only. Blank fields don't show on the summary.</p>
+    </details>
+
+    <div id="lines"></div>
+
+    <div class="adders">
+      <button class="btn" id="addArea" type="button"><span class="plus">+</span> Add Area</button>
+      <button class="btn" id="addCost" type="button"><span class="plus">+</span> Additional Cost</button>
+    </div>
+
+    <div class="card">
+      <div class="adj">
+        <div class="field">
+          <label class="lbl" for="contPct">Contingency</label>
+          <div class="affix has-suf"><input class="txt num" id="contPct" type="text" inputmode="decimal" autocomplete="off"><span class="suf">%</span></div>
+          <span class="adj-out" id="contOut"></span>
+        </div>
+        <div class="field">
+          <label class="lbl" for="rangePct">Budget range ±</label>
+          <div class="affix has-suf"><input class="txt num" id="rangePct" type="text" inputmode="decimal" autocomplete="off"><span class="suf">%</span></div>
+          <span class="adj-out" id="rangeOut"></span>
+        </div>
+      </div>
+      <p class="note">Contingency applies to the area build-out. Set either to 0 to leave it off the summary.</p>
+    </div>
+
+    <div class="total" aria-live="polite">
+      <div>
+        <div class="k">Project total</div>
+        <div class="sub num" id="totalSub">0 SF</div>
+      </div>
+      <div class="v num" id="grandTotal">$0</div>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" id="toSummary" type="button">View Summary</button>
+      <button class="btn ghost" id="resetBtn" type="button">New budget</button>
+    </div>
+
+    <div class="foot">
+      <button class="linkbtn" id="installBtn" type="button" hidden>Install this app</button>
+      <a href="install-guide.pdf" target="_blank" rel="noopener">How to add this app to your home screen</a>
+      <span>Powered by Falkbuilt Salt Lake City</span>
+    </div>
+  </section>
+
+  <section id="view-summary" role="tabpanel" aria-labelledby="tab-summary" hidden>
+    <div class="sheet" id="sheet" title="Tap to hide or show the buttons"></div>
+    <div class="s-actions">
+      <button class="btn" id="backEdit" type="button">Edit</button>
+      <button class="btn" id="copyText" type="button">Copy text</button>
+      <button class="btn primary" id="sharePdf" type="button">Share PDF</button>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <p class="hint">Tip: tap the sheet to hide the buttons for a clean screenshot. Tap it again to bring them back.</p>
+    <textarea id="copyFallback" hidden readonly style="width:100%;height:160px;margin-top:8px"></textarea>
+  </section>
+</div>
+
+<script>
+const BRAND = {"slug": "mountain-ridge", "company": "Mountain Ridge Construction", "textName": "Mountain Ridge Construction", "sheetSub": "", "logo": null, "wordmark": "MOUNTAIN RIDGE CONSTRUCTION", "sheetAccent": "#3E5C4A", "stops": [25, 30, 35, 40, 45, 50, 75, 100, 150, 200, 250, 300, 350, 400], "labeled": [0, 5, 7, 9, 11, 13], "defaultRate": 75, "currency": "USD", "locale": "en-US", "currencyToggle": false};
+</script>
+<script src="../lib/html2canvas.min.js" defer></script>
+<script src="../lib/jspdf.umd.min.js" defer></script>
+<script>
+(function(){
+  const STOPS = BRAND.stops || [25,30,35,40,45,50,75,100,150,200,250,300,350,400];
+  const LABELED = new Set(BRAND.labeled || [0,5,7,9,11,13]);
+  const DEFAULT_RATE = BRAND.defaultRate || 75;
+  const SEG = [BRAND.sheetAccent,'#4D8E8B','#C08A4B','#7B6A99','#8EA05A','#B5604E','#5B7FA8','#A68F5B'];
+  const CONT_SEG = '#B9C4CC', COST_SEG = '#9AA6AF';
+  const KEY = 'tib.' + BRAND.slug + '.budget.v2';
+  const PKEY = 'tib.' + BRAND.slug + '.preparer.v1';
+  const DISCLAIMER = 'Rough order of magnitude (ROM) budget for planning purposes only. Pricing will be refined as design, specifications, site conditions and schedule are finalized.';
+
+  const blank = () => ({ project:'', address:'', clientName:'', clientCompany:'',
+    currency: BRAND.currency || 'USD', contingency: 10, range: 10, lines:[] });
+  let state = blank();
+  let prep = { name:'', title:'', phone:'', email:'' };
+  let nextId = 1;
+
+  // ---------- helpers ----------
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const parse = v => { const n = parseFloat(String(v ?? '').replace(/[^0-9.]/g,'')); return isFinite(n) ? n : 0; };
+  const LOCALE = BRAND.locale || 'en-US';
+  let money0, money2;
+  function setFormatters(){
+    money0 = new Intl.NumberFormat(LOCALE,{style:'currency',currency:state.currency,maximumFractionDigits:0,minimumFractionDigits:0});
+    money2 = new Intl.NumberFormat(LOCALE,{style:'currency',currency:state.currency,minimumFractionDigits:2,maximumFractionDigits:2});
+  }
+  const int = new Intl.NumberFormat('en-US',{maximumFractionDigits:0});
+  const $0 = n => money0.format(Math.round(n));
+  const rateFmt = n => money2.format(n);
+  const rateField = n => (Math.round(n*100)/100).toString();
+  const pctField = n => (Math.round(n*100)/100).toString();
+  const sfFmt = n => int.format(n);
+  const nearest = v => { let b=0,d=Infinity; STOPS.forEach((s,i)=>{const x=Math.abs(s-v); if(x<d){d=x;b=i}}); return b; };
+  const pct = i => (i/(STOPS.length-1))*100;
+  const curPrefix = () => { const p = money0.formatToParts(0).find(x=>x.type==='currency'); return p ? p.value : '$'; };
+
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+  function savePrep(){ try{ localStorage.setItem(PKEY, JSON.stringify(prep)); }catch(e){} }
+  function load(){
+    try{
+      const p = JSON.parse(localStorage.getItem(PKEY) || 'null');
+      if(p && typeof p === 'object') prep = Object.assign(prep, p);
+    }catch(e){}
+    try{
+      const s = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if(!s || !Array.isArray(s.lines)) return false;
+      state = Object.assign(blank(), s);
+      if(!BRAND.currencyToggle) state.currency = BRAND.currency || 'USD';
+      nextId = state.lines.reduce((m,l)=>Math.max(m, l.id||0), 0) + 1;
+      return true;
+    }catch(e){ return false; }
+  }
+
+  const now = () => new Date();
+  const dateLong = d => d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+  const dateShort = d => d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric'});
+  const timeStr = d => d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  const isoDate = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+
+  // ---------- math ----------
+  function areaTotal(l){ return parse(l.sf) * parse(l.rate); }
+  function totals(){
+    let sf=0, build=0, extra=0;
+    state.lines.forEach(l=>{
+      if(l.type==='area'){ sf += parse(l.sf); build += areaTotal(l); }
+      else extra += parse(l.amount);
+    });
+    const contPct = parse(state.contingency), rangePct = parse(state.range);
+    const cont = build * contPct / 100;
+    const grand = build + cont + extra;
+    return { sf, build, extra, cont, contPct, rangePct, grand,
+      low: grand * (1 - rangePct/100), high: grand * (1 + rangePct/100),
+      buildRate: sf ? build/sf : 0, allIn: sf ? grand/sf : 0 };
+  }
+
+  // ---------- builder ----------
+  const linesEl = $('lines');
+
+  function ticksHTML(){
+    return STOPS.map((s,i)=>{
+      const left = `calc(var(--thumb)/2 + (100% - var(--thumb)) * ${i/(STOPS.length-1)})`;
+      return `<span class="tick${LABELED.has(i)?'':' minor'}" data-i="${i}" style="left:${left}">${LABELED.has(i)?s:''}</span>`;
+    }).join('');
+  }
+
+  function areaCard(l){
+    const el = document.createElement('article');
+    el.className = 'line area'; el.dataset.id = l.id;
+    el.innerHTML = `
+      <div class="line-head">
+        <span class="tag">Area</span>
+        <input class="txt" id="name-${l.id}" type="text" placeholder="Area name" aria-label="Area name" autocomplete="off">
+        <button class="x" type="button" aria-label="Remove area">×</button>
+      </div>
+      <div class="pair">
+        <div class="field">
+          <label class="lbl" for="sf-${l.id}">Area (SF)</label>
+          <div class="affix has-suf"><input class="txt num" id="sf-${l.id}" type="text" inputmode="decimal" placeholder="0" autocomplete="off"><span class="suf">SF</span></div>
+        </div>
+        <div class="field">
+          <label class="lbl" for="rate-${l.id}">Cost ($/SF)</label>
+          <div class="affix has-pre has-suf"><span class="pre cur"></span><input class="txt num" id="rate-${l.id}" type="text" inputmode="decimal" autocomplete="off"><span class="suf">/SF</span></div>
+        </div>
+      </div>
+      <div class="slider">
+        <input type="range" id="range-${l.id}" min="0" max="${STOPS.length-1}" step="1" aria-label="Cost per square foot">
+        <div class="ticks">${ticksHTML()}</div>
+      </div>
+      <div class="custom-note"></div>
+      <div class="line-total">
+        <span class="calc num"></span>
+        <span class="amt num">0</span>
+      </div>`;
+
+    const name = el.querySelector(`#name-${l.id}`);
+    const sf = el.querySelector(`#sf-${l.id}`);
+    const rate = el.querySelector(`#rate-${l.id}`);
+    const range = el.querySelector(`#range-${l.id}`);
+
+    name.value = l.name || '';
+    sf.value = l.sf ? sfFmt(parse(l.sf)) : '';
+    rate.value = rateField(parse(l.rate));
+
+    name.addEventListener('input', ()=>{ l.name = name.value; save(); });
+    sf.addEventListener('input', ()=>{ l.sf = sf.value; refresh(); });
+    sf.addEventListener('blur', ()=>{ const n=parse(sf.value); sf.value = n ? sfFmt(n) : ''; });
+    sf.addEventListener('focus', ()=>{ sf.select(); });
+    rate.addEventListener('input', ()=>{ l.rate = parse(rate.value); syncSlider(l, el); refresh(); });
+    rate.addEventListener('blur', ()=>{ rate.value = rateField(parse(rate.value)); });
+    rate.addEventListener('focus', ()=>{ rate.select(); });
+    range.addEventListener('input', ()=>{
+      l.rate = STOPS[+range.value];
+      rate.value = rateField(l.rate);
+      syncSlider(l, el); refresh();
+    });
+    el.querySelector('.x').addEventListener('click', ()=> removeLine(l.id));
+    syncSlider(l, el);
+    return el;
+  }
+
+  function syncSlider(l, el){
+    const v = parse(l.rate);
+    const i = nearest(v);
+    const range = el.querySelector('input[type=range]');
+    range.value = i;
+    range.style.setProperty('--pct', pct(i)+'%');
+    const exact = STOPS[i] === v;
+    el.querySelector('.slider').classList.toggle('custom', !exact);
+    el.querySelectorAll('.tick').forEach(t => t.classList.toggle('on', +t.dataset.i === i));
+    const note = el.querySelector('.custom-note');
+    if(exact) note.textContent = '';
+    else if(v > STOPS[STOPS.length-1]) note.textContent = 'Custom rate, above slider range';
+    else if(v < STOPS[0]) note.textContent = 'Custom rate, below slider range';
+    else note.textContent = 'Custom rate';
+  }
+
+  function costCard(l){
+    const el = document.createElement('article');
+    el.className = 'line cost'; el.dataset.id = l.id;
+    el.innerHTML = `
+      <div class="line-head">
+        <span class="tag">Added cost</span>
+        <input class="txt" id="desc-${l.id}" type="text" placeholder="Description" aria-label="Additional cost description" autocomplete="off">
+        <button class="x" type="button" aria-label="Remove additional cost">×</button>
+      </div>
+      <div class="field">
+        <label class="lbl" for="cost-${l.id}">Cost</label>
+        <div class="affix has-pre"><span class="pre cur"></span><input class="txt num" id="cost-${l.id}" type="text" inputmode="decimal" placeholder="0" autocomplete="off"></div>
+      </div>`;
+    const desc = el.querySelector(`#desc-${l.id}`);
+    const cost = el.querySelector(`#cost-${l.id}`);
+    desc.value = l.desc || '';
+    cost.value = l.amount ? parse(l.amount).toLocaleString('en-US',{maximumFractionDigits:2}) : '';
+    desc.addEventListener('input', ()=>{ l.desc = desc.value; save(); });
+    cost.addEventListener('input', ()=>{ l.amount = cost.value; refresh(); });
+    cost.addEventListener('blur', ()=>{ const n=parse(cost.value); cost.value = n ? n.toLocaleString('en-US',{maximumFractionDigits:2}) : ''; });
+    cost.addEventListener('focus', ()=>{ cost.select(); });
+    el.querySelector('.x').addEventListener('click', ()=> removeLine(l.id));
+    return el;
+  }
+
+  function renderLines(){
+    linesEl.innerHTML = '';
+    if(!state.lines.length){
+      linesEl.innerHTML = '<div class="empty">No areas yet. Use <b>Add Area</b> to start the budget.</div>';
+    }
+    state.lines.forEach(l => linesEl.appendChild(l.type==='area' ? areaCard(l) : costCard(l)));
+    refresh();
+  }
+
+  function refresh(){
+    const cur = curPrefix();
+    document.querySelectorAll('.cur').forEach(e => e.textContent = cur);
+    let n = 0;
+    state.lines.forEach(l=>{
+      if(l.type!=='area') return;
+      n++;
+      const card = linesEl.querySelector(`[data-id="${l.id}"]`);
+      if(!card) return;
+      card.querySelector('.tag').textContent = 'Area ' + n;
+      const sf = parse(l.sf), r = parse(l.rate);
+      card.querySelector('.calc').textContent = sf ? `${sfFmt(sf)} SF × ${rateFmt(r)}/SF` : 'Enter the area in SF';
+      card.querySelector('.amt').textContent = $0(areaTotal(l));
+    });
+    const t = totals();
+    $('grandTotal').textContent = $0(t.grand);
+    $('totalSub').textContent = t.sf ? `${sfFmt(t.sf)} SF · ${rateFmt(t.allIn)}/SF all-in` : '0 SF';
+    $('contOut').textContent = t.contPct ? `${$0(t.cont)} on ${$0(t.build)} build-out` : 'Off';
+    $('rangeOut').textContent = t.rangePct ? `${$0(t.low)} – ${$0(t.high)}` : 'Off';
+    save();
+  }
+
+  function addLine(l){
+    state.lines.push(l);
+    const empty = linesEl.querySelector('.empty'); if(empty) empty.remove();
+    const card = l.type==='area' ? areaCard(l) : costCard(l);
+    linesEl.appendChild(card); refresh();
+    card.querySelector('.line-head .txt').focus();
+  }
+  const addArea = () => addLine({ id: nextId++, type:'area', name:'', sf:'', rate: DEFAULT_RATE });
+  const addCost = () => addLine({ id: nextId++, type:'cost', desc:'', amount:'' });
+  function removeLine(id){ state.lines = state.lines.filter(l => l.id !== id); renderLines(); }
+
+  // ---------- preparer ----------
+  function whoText(){
+    const parts = [prep.name, prep.title].filter(s=>s && s.trim()).join(', ');
+    const contact = [prep.phone, prep.email].filter(s=>s && s.trim()).join(' · ');
+    return { parts, contact };
+  }
+  function updateWho(){
+    const w = whoText();
+    $('whoLine').textContent = w.parts || w.contact ? [w.parts, w.contact].filter(Boolean).join(' · ') : 'Add your name and contact info';
+  }
+
+  // ---------- summary ----------
+  function renderSummary(){
+    const d = now(), t = totals();
+    const areas = state.lines.filter(l=>l.type==='area');
+    const costs = state.lines.filter(l=>l.type==='cost' && (parse(l.amount) || (l.desc||'').trim()));
+    const proj = state.project.trim() || 'Untitled project';
+    const addOns = t.cont > 0 || t.extra > 0;
+
+    const stats = addOns
+      ? [[sfFmt(t.sf),'Total SF'],[rateFmt(t.buildRate),'Build-out $/SF'],[rateFmt(t.allIn),'All-in $/SF']]
+      : [[sfFmt(t.sf),'Total SF'],[rateFmt(t.buildRate),'Avg $/SF'],[String(areas.length),areas.length===1?'Area':'Areas']];
+
+    let mix = '';
+    if(t.grand > 0){
+      mix = '<div class="mix" aria-hidden="true">' +
+        areas.map((l,i)=>{ const a=areaTotal(l); return a>0 ? `<i style="width:${a/t.grand*100}%;background:${SEG[i%SEG.length]}"></i>` : ''; }).join('') +
+        (t.cont>0 ? `<i style="width:${t.cont/t.grand*100}%;background:${CONT_SEG}"></i>` : '') +
+        (t.extra>0 ? `<i style="width:${t.extra/t.grand*100}%;background:${COST_SEG}"></i>` : '') +
+        '</div>';
+    }
+
+    let rows = '';
+    areas.forEach((l,i)=>{
+      const sf = parse(l.sf), r = parse(l.rate);
+      rows += `<tr><td><span class="dot" style="background:${SEG[i%SEG.length]}"></span>${esc((l.name||'').trim() || 'Area '+(i+1))}</td>
+        <td class="num">${sf ? sfFmt(sf) : '–'}</td><td class="num">${rateFmt(r)}</td><td class="num">${$0(areaTotal(l))}</td></tr>`;
+    });
+    if(areas.length > 1 || addOns){
+      rows += `<tr class="sub"><td>Build-out subtotal</td><td class="num">${sfFmt(t.sf)}</td><td class="num">${rateFmt(t.buildRate)}</td><td class="num">${$0(t.build)}</td></tr>`;
+    }
+    if(t.cont > 0){
+      rows += `<tr><td colspan="3"><span class="dot" style="background:${CONT_SEG}"></span>Contingency (${esc(pctField(t.contPct))}% of build-out)</td><td class="num">${$0(t.cont)}</td></tr>`;
+    }
+    if(costs.length){
+      rows += `<tr class="sec"><td colspan="4"><span class="dot" style="background:${COST_SEG}"></span>Additional costs</td></tr>`;
+      costs.forEach(l=>{
+        rows += `<tr><td colspan="3">${esc((l.desc||'').trim() || 'Additional cost')}</td><td class="num">${$0(parse(l.amount))}</td></tr>`;
+      });
+      if(costs.length > 1) rows += `<tr class="sub"><td colspan="3">Additional costs subtotal</td><td class="num">${$0(t.extra)}</td></tr>`;
+    }
+    rows += `<tr class="grand"><td colspan="3">Project total</td><td class="num">${$0(t.grand)}</td></tr>`;
+
+    const forLine = [state.clientName, state.clientCompany].map(s=>(s||'').trim()).filter(Boolean).map(esc).join(', ');
+    const w = whoText();
+    let meta = '';
+    if(forLine) meta += `<dt>For</dt><dd>${forLine}</dd>`;
+    if(w.parts || w.contact) meta += `<dt>By</dt><dd>${esc(w.parts)}${w.parts && w.contact ? '<br>' : ''}${w.contact ? `<span class="dim">${esc(w.contact)}</span>` : ''}</dd>`;
+    meta += `<dt>Date</dt><dd class="num when">${dateLong(d)} · ${timeStr(d)}</dd>`;
+
+    const brandBlock = BRAND.logo
+      ? `<img src="${BRAND.logo}" alt="${esc(BRAND.company)}">`
+      : `<div class="s-word">${esc(BRAND.wordmark || BRAND.company)}</div>`;
+    const curNote = BRAND.currencyToggle ? ` All amounts in ${state.currency === 'CAD' ? 'Canadian' : 'US'} dollars (${state.currency}).` : '';
+
+    $('sheet').innerHTML = `
+      <div class="s-head">
+        <div class="s-brand">${brandBlock}${BRAND.sheetSub ? `<div class="s-sub">${esc(BRAND.sheetSub)}</div>` : ''}</div>
+        <div class="doc">Tenant Improvement<br>Budget</div>
+      </div>
+      <h1 class="proj">${esc(proj)}</h1>
+      ${state.address.trim() ? `<div class="addr">${esc(state.address.trim())}</div>` : ''}
+      <dl class="meta">${meta}</dl>
+      <div class="hero">
+        <div class="hero-k">Estimated project budget</div>
+        <div class="hero-v num">${$0(t.grand)}</div>
+        ${t.rangePct > 0 && t.grand > 0 ? `<div class="range num">Budget range ±${esc(pctField(t.rangePct))}%: ${$0(t.low)} – ${$0(t.high)}</div>` : ''}
+        <div class="stats">${stats.map(s=>`<div><b class="num">${s[0]}</b><span>${s[1]}</span></div>`).join('')}</div>
+      </div>
+      ${mix}
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Area</th><th>SF</th><th>$/SF</th><th>Budget</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <p class="fine">${DISCLAIMER}${curNote}</p>`;
+  }
+
+  function summaryText(){
+    const d = now(), t = totals();
+    const out = [];
+    out.push(`${BRAND.textName} | Tenant Improvement Budget`);
+    out.push(state.project.trim() || 'Untitled project');
+    if(state.address.trim()) out.push(state.address.trim());
+    const forLine = [state.clientName, state.clientCompany].map(s=>(s||'').trim()).filter(Boolean).join(', ');
+    if(forLine) out.push(`Prepared for: ${forLine}`);
+    const w = whoText();
+    if(w.parts || w.contact) out.push(`Prepared by: ${[w.parts, w.contact].filter(Boolean).join(' | ')}`);
+    out.push(`Date: ${dateLong(d)} ${timeStr(d)}`);
+    out.push('');
+    state.lines.filter(l=>l.type==='area').forEach((l,i)=>{
+      out.push(`${(l.name||'').trim() || 'Area '+(i+1)}: ${sfFmt(parse(l.sf))} SF x ${rateFmt(parse(l.rate))}/SF = ${$0(areaTotal(l))}`);
+    });
+    const costs = state.lines.filter(l=>l.type==='cost' && (parse(l.amount) || (l.desc||'').trim()));
+    if(t.cont > 0 || costs.length) out.push(`Build-out subtotal: ${$0(t.build)}`);
+    if(t.cont > 0) out.push(`Contingency (${pctField(t.contPct)}%): ${$0(t.cont)}`);
+    if(costs.length){
+      out.push('Additional costs:');
+      costs.forEach(l=> out.push(`  ${(l.desc||'').trim() || 'Additional cost'}: ${$0(parse(l.amount))}`));
+    }
+    out.push('');
+    out.push(`ESTIMATED PROJECT BUDGET: ${$0(t.grand)}`);
+    if(t.rangePct > 0) out.push(`Budget range ±${pctField(t.rangePct)}%: ${$0(t.low)} – ${$0(t.high)}`);
+    out.push(`${sfFmt(t.sf)} SF total | ${rateFmt(t.allIn)}/SF all-in`);
+    out.push('');
+    out.push(DISCLAIMER + (BRAND.currencyToggle ? ` All amounts in ${state.currency}.` : ''));
+    return out.join('\n');
+  }
+
+  // ---------- PDF ----------
+  let pdfFile = null;
+  function toast(msg){ $('toast').textContent = msg; }
+  function fileName(){
+    const p = (state.project.trim() || 'Untitled project').replace(/[\\/:*?"<>|]+/g,'').slice(0,60);
+    return `TI Budget - ${p} - ${isoDate(now())}.pdf`;
+  }
+  async function makePdf(){
+    renderSummary();
+    const sheet = $('sheet');
+    if(document.fonts && document.fonts.ready) await document.fonts.ready;
+    // lay the sheet out at a fixed, roomy width so phone and desktop PDFs look the same
+    const canvas = await window.html2canvas(sheet, { scale: 2.5, backgroundColor:'#FFFFFF', useCORS:true, logging:false,
+      windowWidth: 760,
+      onclone: doc => {
+        const s = doc.getElementById('sheet');
+        s.style.width = '680px'; s.style.maxWidth = 'none';
+        s.style.boxShadow='none'; s.style.border='0'; s.style.borderRadius='0';
+      } });
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ unit:'pt', format:'letter', orientation:'portrait', compress:true });
+    const pw = 612, ph = 792, m = 36;
+    let w = pw - m*2, h = canvas.height * w / canvas.width;
+    if(h > ph - m*2){ h = ph - m*2; w = canvas.width * h / canvas.height; }
+    pdf.addImage(canvas.toDataURL('image/jpeg', 0.92), 'JPEG', (pw - w)/2, m, w, h);
+    pdf.setProperties({ title: `${state.project.trim() || 'TI Budget'} – Tenant Improvement Budget`, author: prep.name || BRAND.textName, creator: BRAND.textName + ' TI Quick Budget' });
+    const blob = pdf.output('blob');
+    return new File([blob], fileName(), { type:'application/pdf' });
+  }
+  function download(file){
+    const url = URL.createObjectURL(file);
+    const a = document.createElement('a');
+    a.href = url; a.download = file.name; document.body.appendChild(a); a.click();
+    setTimeout(()=>{ URL.revokeObjectURL(url); a.remove(); }, 4000);
+  }
+  const canShareFiles = f => { try{ return !!(navigator.canShare && navigator.canShare({ files:[f] })); }catch(e){ return false; } };
+
+  $('sharePdf').addEventListener('click', async ()=>{
+    const btn = $('sharePdf');
+    if(pdfFile){                                  // second tap: hand the ready file to the phone's share menu
+      const f = pdfFile; pdfFile = null; btn.textContent = 'Share PDF';
+      try{ await navigator.share({ files:[f], title: f.name }); toast(''); }
+      catch(e){ if(e && e.name !== 'AbortError'){ download(f); toast('Saved the PDF to your downloads.'); } }
+      return;
+    }
+    if(!window.html2canvas || !window.jspdf){ toast('The PDF tools are still loading. Try again in a moment.'); return; }
+    btn.disabled = true; btn.textContent = 'Preparing…'; toast('');
+    try{
+      const f = await makePdf();
+      if(canShareFiles(f)){ pdfFile = f; btn.textContent = 'Tap to send'; toast('PDF ready. Tap “Tap to send” to text, email or AirDrop it.'); }
+      else { download(f); btn.textContent = 'Share PDF'; toast('PDF saved to your downloads.'); }
+    }catch(e){
+      btn.textContent = 'Share PDF'; toast('Could not create the PDF. Take a screenshot instead, or try again.');
+    }finally{ btn.disabled = false; }
+  });
+
+  // ---------- views ----------
+  function show(view){
+    const sum = view === 'summary';
+    if(sum) renderSummary();
+    document.body.classList.remove('clean');
+    $('view-build').hidden = sum;
+    $('view-summary').hidden = !sum;
+    $('tab-build').setAttribute('aria-selected', String(!sum));
+    $('tab-summary').setAttribute('aria-selected', String(sum));
+    toast(''); pdfFile = null; $('sharePdf').textContent = 'Share PDF';
+    $('copyFallback').hidden = true;
+    try{ history.replaceState(null,'', sum ? '#summary' : '#budget'); }catch(e){}
+    window.scrollTo(0,0);
+  }
+
+  function tick(){
+    const d = now();
+    $('nowBuild').textContent = `${dateShort(d)} · ${timeStr(d)}`;
+    if(!$('view-summary').hidden){
+      const w = document.querySelector('#sheet .when');
+      if(w) w.textContent = `${dateLong(d)} · ${timeStr(d)}`;
+    }
+  }
+
+  // ---------- wiring ----------
+  const bindText = (id, key) => $(id).addEventListener('input', e=>{ state[key] = e.target.value; save(); });
+  bindText('projectName','project'); bindText('projectAddress','address');
+  bindText('clientName','clientName'); bindText('clientCompany','clientCompany');
+  [['byName','name'],['byTitle','title'],['byPhone','phone'],['byEmail','email']].forEach(([id,k])=>{
+    $(id).addEventListener('input', e=>{ prep[k] = e.target.value; savePrep(); updateWho(); });
+  });
+  $('contPct').addEventListener('input', e=>{ state.contingency = parse(e.target.value); refresh(); });
+  $('rangePct').addEventListener('input', e=>{ state.range = parse(e.target.value); refresh(); });
+  ['contPct','rangePct'].forEach(id => {
+    $(id).addEventListener('focus', e=> e.target.select());
+    $(id).addEventListener('blur', e=> { e.target.value = pctField(parse(e.target.value)); });
+  });
+
+  function setCurrency(c){
+    state.currency = c; setFormatters();
+    $('curUSD').setAttribute('aria-pressed', String(c==='USD'));
+    $('curCAD').setAttribute('aria-pressed', String(c==='CAD'));
+    refresh();
+  }
+  if(BRAND.currencyToggle){
+    $('currencyField').hidden = false;
+    $('curUSD').addEventListener('click', ()=>setCurrency('USD'));
+    $('curCAD').addEventListener('click', ()=>setCurrency('CAD'));
+  }
+
+  $('addArea').addEventListener('click', addArea);
+  $('addCost').addEventListener('click', addCost);
+  $('toSummary').addEventListener('click', ()=>show('summary'));
+  $('tab-summary').addEventListener('click', ()=>show('summary'));
+  $('tab-build').addEventListener('click', ()=>show('budget'));
+  $('backEdit').addEventListener('click', ()=>show('budget'));
+  $('sheet').addEventListener('click', ()=>{
+    const on = document.body.classList.toggle('clean');
+    if(on) window.scrollTo(0,0);
+  });
+
+  let armed = null;
+  $('resetBtn').addEventListener('click', ()=>{
+    const b = $('resetBtn');
+    if(!armed){
+      b.textContent = 'Tap again to clear'; b.classList.add('warn');
+      armed = setTimeout(()=>{ armed=null; b.textContent='New budget'; b.classList.remove('warn'); }, 4000);
+      return;
+    }
+    clearTimeout(armed); armed = null;
+    b.textContent = 'New budget'; b.classList.remove('warn');
+    const keepCur = state.currency;
+    state = blank(); state.currency = keepCur; nextId = 1;
+    fillFields();
+    state.lines.push({ id: nextId++, type:'area', name:'', sf:'', rate: DEFAULT_RATE });
+    renderLines();
+    $('projectName').focus();
+  });
+
+  $('copyText').addEventListener('click', ()=>{
+    const text = summaryText();
+    const fb = ()=>{ const ta=$('copyFallback'); ta.value=text; ta.hidden=false; ta.focus(); ta.select(); toast('Select all and copy the text below.'); };
+    try{
+      navigator.clipboard.writeText(text).then(()=>toast('Copied. Paste into a text or email.'), fb);
+    }catch(e){ fb(); }
+  });
+
+  // install button for browsers that offer it (Chrome, Edge, Android)
+  let deferredInstall = null;
+  window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredInstall = e; $('installBtn').hidden = false; });
+  $('installBtn').addEventListener('click', async ()=>{
+    if(!deferredInstall) return;
+    deferredInstall.prompt();
+    try{ await deferredInstall.userChoice; }catch(e){}
+    deferredInstall = null; $('installBtn').hidden = true;
+  });
+  window.addEventListener('appinstalled', ()=>{ $('installBtn').hidden = true; });
+
+  function fillFields(){
+    $('projectName').value = state.project;
+    $('projectAddress').value = state.address;
+    $('clientName').value = state.clientName;
+    $('clientCompany').value = state.clientCompany;
+    $('contPct').value = pctField(parse(state.contingency));
+    $('rangePct').value = pctField(parse(state.range));
+    $('byName').value = prep.name; $('byTitle').value = prep.title;
+    $('byPhone').value = prep.phone; $('byEmail').value = prep.email;
+    setFormatters();
+    if(BRAND.currencyToggle){
+      $('curUSD').setAttribute('aria-pressed', String(state.currency==='USD'));
+      $('curCAD').setAttribute('aria-pressed', String(state.currency==='CAD'));
+    }
+    updateWho();
+  }
+
+  // ---------- start ----------
+  if(!load() || !state.lines.length){
+    const keep = state;
+    state = Object.assign(blank(), keep, { lines: [{ id: nextId++, type:'area', name:'', sf:'', rate: DEFAULT_RATE }] });
+  }
+  fillFields();
+  if(!prep.name) $('byCard').open = true;
+  renderLines();
+  tick(); setInterval(tick, 15000);
+  if(location.hash === '#summary') show('summary');
+
+  if('serviceWorker' in navigator && location.protocol === 'https:'){
+    window.addEventListener('load', ()=>{ navigator.serviceWorker.register('sw.js').catch(()=>{}); });
+  }
+})();
+</script>
+</body>
+</html>

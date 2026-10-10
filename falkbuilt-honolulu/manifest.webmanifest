@@ -1,0 +1,31 @@
+{
+  "name": "Falkbuilt Honolulu TI Quick Budget",
+  "short_name": "Falkbuilt TI",
+  "description": "Quick tenant improvement budgets with a client-ready summary.",
+  "id": "./?app=falkbuilt-honolulu",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ECEFF1",
+  "theme_color": "#ECEFF1",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
