@@ -33,11 +33,11 @@
 /* Layout: single narrow column (phone-first, max 640px); builder cards stacked with a sticky total; summary is a fixed-light "paper" sheet sized for one screenshot or one PDF page */
 :root{
   --bg:#ECEFF1; --surface:#FFFFFF; --surface-2:#F4F6F8; --ink:#16202A; --muted:#5A6772;
-  --line:#D3DADF; --accent:#2E4A7D; --accent-ink:#FFFFFF; --accent-soft:#E2E6ED; --danger:#A3392A;
+  --line:#D3DADF; --accent:#22272E; --accent-ink:#FFFFFF; --accent-soft:#E0E1E2; --danger:#A3392A;
   --logo-plate:transparent;
   /* summary sheet stays light in every theme so screenshots and PDFs always look the same */
   --sheet-bg:#FFFFFF; --sheet-ink:#131A21; --sheet-muted:#5D6973; --sheet-faint:#8A949C; --sheet-line:#DEE4E8;
-  --sheet-band:#F1F4F6; --sheet-accent:#2E4A7D;
+  --sheet-band:#F1F4F6; --sheet-accent:#22272E;
   --f-display:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
   --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --r:10px;
@@ -45,13 +45,13 @@
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#0E1419; --surface:#162029; --surface-2:#1C2731; --ink:#E5EBEF; --muted:#98A6B1;
-  --line:#2A3743; --accent:#809DD0; --accent-ink:#0B141A; --accent-soft:#2D3C4E; --danger:#E58371;
+  --line:#2A3743; --accent:#C9D1DA; --accent-ink:#0B141A; --accent-soft:#3D4750; --danger:#E58371;
   --logo-plate:#F2F4F5;
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
   --bg:#0E1419; --surface:#162029; --surface-2:#1C2731; --ink:#E5EBEF; --muted:#98A6B1;
-  --line:#2A3743; --accent:#809DD0; --accent-ink:#0B141A; --accent-soft:#2D3C4E; --danger:#E58371;
+  --line:#2A3743; --accent:#C9D1DA; --accent-ink:#0B141A; --accent-soft:#3D4750; --danger:#E58371;
   --logo-plate:#F2F4F5;
   color-scheme:dark;
 }
@@ -72,7 +72,7 @@ img{max-width:100%}
 .top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:16px 12px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;min-width:0}
 .brand-logo{display:flex;align-items:center;background:var(--logo-plate);border-radius:6px;padding:3px 6px;flex:none}
-.brand-logo img{height:26px;width:auto;display:block}
+.brand-logo img{height:9px;width:auto;display:block}
 .brand-text{display:flex;flex-direction:column;line-height:1.1;min-width:0}
 .eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .app-name{font-family:var(--f-display);font-weight:700;font-size:22px;letter-spacing:.01em}
@@ -169,7 +169,7 @@ details.card[open] > summary{margin-bottom:10px}
 .sheet{background:var(--sheet-bg);color:var(--sheet-ink);border-radius:12px;padding:20px 18px 16px;border:1px solid var(--sheet-line);box-shadow:0 2px 14px rgba(0,0,0,.08);color-scheme:light;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .s-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;border-bottom:2px solid var(--sheet-ink);padding-bottom:10px;flex-wrap:wrap}
 .s-brand{display:flex;flex-direction:column;gap:5px;min-width:0}
-.s-brand img{height:44px;width:auto;max-width:220px;object-fit:contain;object-position:left center;display:block}
+.s-brand img{height:15px;width:auto;max-width:220px;object-fit:contain;object-position:left center;display:block}
 .s-word{font-family:var(--f-display);font-weight:700;font-size:22px;letter-spacing:.04em;line-height:1.05;color:var(--sheet-accent)}
 .s-sub{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--sheet-muted);font-weight:600;line-height:1.25}
 .doc{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sheet-muted);font-weight:600;text-align:right;line-height:1.3;margin-left:auto}
@@ -222,9 +222,9 @@ body.clean .sheet{box-shadow:none;margin-top:12px}
 <div class="app">
   <header class="top">
     <div class="brand">
-      
+      <span class="brand-logo"><img src="logo.png" alt="DreamWorks Builders"></span>
       <div class="brand-text">
-        <span class="eyebrow">DreamWorks Builders</span>
+        
         <span class="app-name">TI Quick Budget</span>
       </div>
     </div>
@@ -332,7 +332,7 @@ body.clean .sheet{box-shadow:none;margin-top:12px}
 </div>
 
 <script>
-const BRAND = {"slug": "dreamworks", "company": "DreamWorks Builders", "textName": "DreamWorks Builders", "sheetSub": "", "logo": null, "wordmark": "DREAMWORKS BUILDERS", "sheetAccent": "#2E4A7D", "stops": [25, 30, 35, 40, 45, 50, 75, 100, 150, 200, 250, 300, 350, 400], "labeled": [0, 5, 7, 9, 11, 13], "defaultRate": 75, "currency": "USD", "locale": "en-US", "currencyToggle": false};
+const BRAND = {"slug": "dreamworks", "company": "DreamWorks Builders", "textName": "DreamWorks Builders", "sheetSub": "", "logo": "logo.png", "wordmark": "DREAMWORKS BUILDERS", "sheetAccent": "#22272E", "stops": [25, 30, 35, 40, 45, 50, 75, 100, 150, 200, 250, 300, 350, 400], "labeled": [0, 5, 7, 9, 11, 13], "defaultRate": 75, "currency": "USD", "locale": "en-US", "currencyToggle": false};
 </script>
 <script src="../lib/html2canvas.min.js" defer></script>
 <script src="../lib/jspdf.umd.min.js" defer></script>
